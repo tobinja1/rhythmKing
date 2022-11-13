@@ -1,5 +1,7 @@
     let device;
 
+let uVol, uBalance, uBPM;
+
 
 async function setup() {
     const drummerExportURL = "export/rK.export.json";
@@ -82,7 +84,7 @@ async function setup() {
     }
 
         // Set the DataBuffer on the device
-    await drummer.setDataBuffer(bufferId, audioBuf);
+    //await drummer.setDataBuffer(bufferId, audioBuf);
 
     //MESSING WITH PARAMETERS HERE
     // const dampP = device.parametersById.get("damp");
@@ -95,7 +97,7 @@ async function setup() {
     //document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
 
     // (Optional) Automatically create sliders for the device parameters
-    makeSliders(drummer);
+    //makeSliders(drummer);
 
     // init();
     // canvas.onmousedown = myDown;
@@ -162,7 +164,7 @@ function makeSliders(device) {
         let sliderContainer = document.createElement("div");
         sliderContainer.appendChild(label);
         sliderContainer.appendChild(slider);
-        sliderContainer.appendChild(text);
+        //sliderContainer.appendChild(text);
 
         // Add a name for the label
         label.setAttribute("name", param.name);
@@ -184,9 +186,9 @@ function makeSliders(device) {
         }
         slider.setAttribute("value", param.value);
 
-        // Make a settable text input display for the value
-        text.setAttribute("value", param.value.toFixed(1));
-        text.setAttribute("type", "text");
+        // // Make a settable text input display for the value
+        // text.setAttribute("value", param.value.toFixed(1));
+        // text.setAttribute("type", "text");
 
         // Make each slider control its parameter
         slider.addEventListener("pointerdown", () => {
@@ -203,19 +205,19 @@ function makeSliders(device) {
         });
 
         // Make the text box input control the parameter value as well
-        text.addEventListener("keydown", (ev) => {
-            if (ev.key === "Enter") {
-                let newValue = Number.parseFloat(text.value);
-                if (isNaN(newValue)) {
-                    text.value = param.value;
-                } else {
-                    newValue = Math.min(newValue, param.max);
-                    newValue = Math.max(newValue, param.min);
-                    text.value = newValue;
-                    param.value = newValue;
-                }
-            }
-        });
+        // text.addEventListener("keydown", (ev) => {
+        //     if (ev.key === "Enter") {
+        //         let newValue = Number.parseFloat(text.value);
+        //         if (isNaN(newValue)) {
+        //             text.value = param.value;
+        //         } else {
+        //             newValue = Math.min(newValue, param.max);
+        //             newValue = Math.max(newValue, param.min);
+        //             text.value = newValue;
+        //             param.value = newValue;
+        //         }
+        //     }
+        // });
 
         // Store the slider and text by name so we can access them later
         uiElements[param.name] = { slider, text };
@@ -451,6 +453,25 @@ function getCode(obj) {
   let newVal = obj.innerHTML;
   document.getElementById("dropDownButton").innerHTML = obj.innerHTML;
 
+}
+
+function getVol(obj) {
+  uVol = document.getElementById('volRange').value;
+  const pVol = drummer.parametersById.get("volume");
+  pVol.value = uVol;
+
+}
+
+function getBalance(obj) {
+  uBalance = document.getElementById('balanceRange').value;
+  const pBalance = drummer.parametersById.get("balance");
+  pBalance.value = uBalance;
+}
+
+function getBPM(obj) {
+  uBPM = document.getElementById('bpmRange').value;
+  const pBPM = drummer.parametersById.get("bpm");
+  pBPM.value = uBPM;
 }
 
 setup();

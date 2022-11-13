@@ -6,49 +6,25 @@
     <meta name="theme-color" content="#000000">
     <meta name="rnbo-version" content="1.0.0-alpha.5">
     <link rel="stylesheet" href="style/style.css">
-    <title>Jay's Reading RNBO</title>
+    <title>Jay's rhythmKing</title>
 </head>
 
-<body>
+<body style="background-color:#000000;>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <svg id="bg" width="100%" height="100%"></svg>
     <div id="rnbo-root">
-		<div>
-			<h1>Stinky patch</h1>
-		</div>
-        <div id="hed2">
-            <h2>click and drag the rectangle</h2>
+
+          <h1>rhythmKing</h1>
+
+          <label for="customRange2" class="text-white">vol</label>
+          <input type="range" class="form-range" min="0" max="1" step="0.01" id="volRange" onClick="getVol(this)">
+
+          <label for="customRange2" class="text-white">balance</label>
+          <input type="range" class="form-range" min="0" max="1" step="0.01" id="balanceRange" onClick="getBalance(this)">
+
+          <label for="customRange2" class="text-white">bpm</label>
+          <input type="range" class="form-range" min="0" max="1" step="0.01" id="bpmRange" onClick="getBPM(this)">
         </div>
-
-        <div id="hed3" style="color:gray;">
-            <h3>(give it a sec to warm up!)</h3>
-        </div>
-
-        <div id="hed3-2" style="color:gray;">
-            <h3>(if you're on mobile: turn your volume toggle ON, tap the big rectangle, and use the sliders at the bottom. sry i'm working on getting this to behave!!)</h3>
-        </div>
-
-        <div style="text align:center">
-          <canvas id="myCanvas" width="300" height="300"
-            style="border:1px dotted #B4B4B4;">
-            </canvas>
-        </div>
-
-        <div class="dropdown">
-            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" id="dropDownButton">
-              don't mind me
-            </button>
-            <div class="dropdown-menu" id="dropdown-menu">
-              <a class="dropdown-item" href="#" onClick="getCode(this);">we</a>
-              <a class="dropdown-item" href="#" onClick="getCode(this);">like</a>
-              <a class="dropdown-item" href="#" onClick="getCode(this);">fortnite</a>
-            </div>
-          </div>
-
-          <div id="rnbo-parameter-sliders">
-                    <h2>Parameters</h2>
-                    <em id="no-param-label">No parameters</em>
-                </div>
 
 
 
