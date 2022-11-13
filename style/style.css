@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: Arial;
+}
+
+h1 {
+  font-size: 50px !important;
+  font-weight: bold !important;
+}
+
+h3 {
+  font-size: 22px !important;
+}
+
+#rnbo-root {
+    height: 100vh;
+    width: 100vw;
+}
+
+#bg {
+    position: absolute;
+    z-index: -1;
+}
+
+h2, em {
+    width: 100%;
+}
+
+#rnbo-root {
+    margin: auto;
+    max-width: 540px;
+}
+
+#rnbo-clickable-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#rnbo-clickable-keyboard > div {
+    margin: 2px;
+    border: solid black 1px;
+    min-height: 50px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rnbo-clickable-keyboard > div.clicked {
+    background: #222222;
+    color: #dddddd;
+}
+
+#rnbo-parameter-sliders {
+    display: flex;
+    flex-direction: column;
+}
+
+#rnbo-parameter-sliders > div {
+    display: flex;
+}
+
+#rnbo-parameter-sliders > div > input:first-of-type {
+    flex-grow: 1;
+}
+
+.p5 {
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+  transition: background-color 1s linear;
+}
+
+.p5:active {
+  background-color: limegreen;
+}
+
+#myCanvas {
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display:block;
+}
+
+canvas {
+   display: inline;
+}
