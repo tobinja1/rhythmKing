@@ -2,7 +2,7 @@
 
 
 async function setup() {
-    const drummerExportURL = "export/drummer.export.json";
+    const drummerExportURL = "export/rK.export.json";
 
     // Create AudioContext
     const WAContext = window.AudioContext || window.webkitAudioContext;
@@ -97,9 +97,9 @@ async function setup() {
     // (Optional) Automatically create sliders for the device parameters
     makeSliders(drummer);
 
-    init();
-    canvas.onmousedown = myDown;
-    canvas.onmouseup = myUp;
+    // init();
+    // canvas.onmousedown = myDown;
+    // canvas.onmouseup = myUp;
 
     // (Optional) Create a form to send messages to RNBO inputs
     //makeInportForm(device);
