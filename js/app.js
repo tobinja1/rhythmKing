@@ -8,14 +8,14 @@ async function setup() {
     const WAContext = window.AudioContext || window.webkitAudioContext;
     const context = new WAContext();
 
-    const bufferId = "theBuff"; // let's assume we have a [buffer~ my_sample] object in our patch
+    //const bufferId = "theBuff"; // let's assume we have a [buffer~ my_sample] object in our patch
 
-    // Load our sample as an ArrayBuffer;
-    const fileResponse = await fetch("perc.wav");
-    const arrayBuf = await fileResponse.arrayBuffer();
+    // // Load our sample as an ArrayBuffer;
+    // const fileResponse = await fetch("perc.wav");
+    // const arrayBuf = await fileResponse.arrayBuffer();
 
-  // Decode the received Data as an AudioBuffer
-    const audioBuf = await context.decodeAudioData(arrayBuf);
+  // // Decode the received Data as an AudioBuffer
+  //   const audioBuf = await context.decodeAudioData(arrayBuf);
 
     // Create gain node and connect it to audio output
     const outputNode = context.createGain();
